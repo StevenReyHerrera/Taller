@@ -1,30 +1,5 @@
-@mixin neo( $estado ,$br , $dis1 ,$back-color:default){
-	color			: var(--negro);
-	transition		: all .4s ease;
-	border-radius 	: $br ;
-	
-	@if $estado == 1 {
-		background-color	: $back-color;
-		box-shadow			: 
-			$dis1    $dis1    $dis1*2 var(--sombra-ppal),
-			$dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec),
-			inset 0 0 0 transparent,
-			inset 0 0 0 transparent;
-	}@else if $estado == 2 {
-		background-color	: $back-color;
-		box-shadow			: 
-			0 0 0 transparent,
-			0 0 0 transparent,
-			inset $dis1    $dis1    $dis1*2 var(--sombra-ppal),
-			inset $dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec);
-	}
-    
-}
+@import 'functions';
 
-
-$red: #e3350d;
-$yellow: #ffd700;
-$black: #000;
 
 @mixin button($bg-color, $text-color, $hover-color) {
   display: inline-block;
@@ -40,7 +15,7 @@ $black: #000;
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: $hover-color;
+    background-color: lighten($color: $bg-color, $amount: 30%) ;
   }
 }
 
@@ -84,3 +59,19 @@ $black: #000;
 	}
   }
   
+
+  @mixin back_tipo($type){
+	@if $type == "fire" {
+		background-color: #fa0c00;
+	  } @else if $type == "water" {
+		background-color: #0074d9;
+	  }@else if $type == "rock" {
+		background-color: #553007;
+	  }@else if $type == "psychic" {
+		background-color: #9c00d9;
+	  } @else if $type == "grass" {
+		background-color: #2ecc40;
+	  } @else {
+		background-color: #ddd;
+	  }
+  }

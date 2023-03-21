@@ -2,6 +2,12 @@ const datos = [];
 const cardContainer=document.getElementById("card-container")
 const numeroAleatorio = Math.floor(Math.random() * 1008) + 1;
 const boton = document.getElementById("boton_atrapa");
+
+const inicio = () => {
+  window.location.href = './index.html';
+}
+
+
 const showCard = () => {
 
   boton.classList.add("loader")
@@ -22,9 +28,9 @@ const showCard = () => {
   });
   
   fetchPokemonData.then(data => {
-    
     const div = document.createElement('div');
     div.setAttribute("class","card")
+    div.classList.add(`${data.types[0].type.name}`)
     const h1 = document.createElement('h1');
     h1.textContent = data.name;
     h1.style.fontSize="2.8rem"

@@ -1,5 +1,7 @@
 let newComentario=null
-
+const inicio = () => {
+  window.location.href = './index.html';
+}
 const enviar = (event) => {
   event.preventDefault();
     newComentario = new Comentario(

@@ -1,3 +1,52 @@
 @function gradiente($color1, $color2, $direccion: to bottom) {
     @return linear-gradient($direccion, $color1, $color2);
   }
+
+
+  @function font-size($size) {
+    @if $size == small {
+      @return 0.5rem;
+    } @else if $size == medium {
+      @return 1.1rem;
+    } @else if $size == large {
+      @return 2rem;
+    } @else {
+      @return null; // Retornar null si no se especifica un tamaño válido
+    }
+  }
+
+
+
+  @function lighten-darken($color, $amount) {
+    @return lighten($color, $amount) if $amount > 0;
+    @return darken($color, abs($amount)) if $amount < 0;
+    @return $color;
+  }
+
+
+
+  @function back_tipo($type){
+	@if $type == "fire" {
+		@return #fa0c00;
+	  } @else if $type == "water" {
+		@return #0074d9;
+	  } @else if $type == "flying" {
+		@return #99c6ee;
+	  }@else if $type == "rock" {
+		@return #553007;
+	  }@else if $type == "psychic" {
+		@return #9c00d9;
+	  } @else if $type == "grass" {
+		@return #2ecc40;
+	  } @else if $type == "normal" {
+		@return #e7e541;
+	  }@else if $type == "poison" {
+		@return #c7f10e;
+	  }@else if $type == "steel" {
+		@return #a1a197;
+	  }@else if $type == "dragon" {
+		@return #f1430e;
+	  }@else {
+		@return #ddd;
+	  }
+  }

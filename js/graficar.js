@@ -1,6 +1,8 @@
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
-
+const inicio = () => {
+  window.location.href = './index.html';
+}
 const buscar = async () => {
   try {
     const response = await fetch("https://pokeapi.co/api/v2/type");
