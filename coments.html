@@ -6,24 +6,21 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-
-    <div class="container_chat">
-      <textarea id="chat"></textarea>
+    <button class="button--inicio">Inicio</button>
+    <div class="container-chat">
+      <textarea class="container-chat__textarea" id="chat"></textarea> 
+      <form class="container-chat__form" onsubmit="enviar(event)">
+        <label class="container-chat__form-label">Usuario</label>
+        <input class="container-chat__form-input" type="text" id="usuario">
+        <label class="container-chat__form-label" for="w3review">Comentario:</label>
+        <textarea type="text" class="container-chat__form-textarea" id="comentario"></textarea> 
+        <input class="container-chat__form-submit" type="submit" value="Submit" id="submit"> 
+      </form>
+      <div class="container-chat__buttons"> 
+        <button class="container-chat__buttons-edit" onclick="editar()">Editar</button>
+        <button class="container-chat__buttons-edit" onclick="eliminar()">Eliminar</button>
+      </div>
     </div>
-
-    <form onsubmit="enviar(event)">
-      <label>Usuario</label>
-      <input type="text" id="usuario">
-      <p><label for="w3review">Comentarios:</label></p>
-      <textarea id="comentario"></textarea>
-      <br>
-      <input type="submit" value="Submit" id="submit">
-      
-    </form>
-    <button onclick="editar()">editar</button>
-    <button onclick="eliminar()">Eliminar</button>
-    <p>Click the "Submit" button and the form-data will be sent to a page on the 
-      server called "action_page.php".</p>
       
     <script src="./js/coments.js"></script>
   </body>

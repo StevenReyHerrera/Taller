@@ -1,13 +1,18 @@
-@import "./mixins", "./vars", "./reset";
+@import "./mixins", "./vars", "./reset", './functions';
 
 body{
   font-family: cursive;
-  background-color: black;
+  background-color: map-get($colores,"fondo");
 }
-// boton home
-.home{
-  @include boton_home();
+// boton inicio
+.button--inicio {
+  @include button(map-get($colores,"primario"), map-get($colores,"terciario"), darken(map-get($colores,"primario"), 10%));
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
+
 //header
 
 .header {
@@ -18,43 +23,36 @@ body{
     background-position: center;
     }
   &__nav {
-    background-color: rgb(233, 14, 14);
+    background-color: map-get($colores,"primario");
     padding: 1%;
     margin-bottom: 3%;
   }
 }
 
 .nav__ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  list-style: none;
+  @include nav-menu;
   &-li {
-    color: white;
+    color: map-get($colores,"texto");
     font-size: 1.8rem;
   }
   &-a:hover{
-    color:black;
+    color:map-get($colores,"fondo");
   }
 }
 //main
 
 .carrousel {
   overflow: hidden;
-  width: 80%;
-  height: 500px;
-  margin-left: 10%;
+  
+ @include carrousel-dimensiones(100%, 600px);
+
   &__grande{
-    width: 300%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-container(row, space-between, center);
+ 
     transition: all 1s ease;
   }
   &__img {
-    width: calc(100% / 3);
-    height: auto;
+
     img{
       width: 20%;
       margin-left: 40%;
@@ -65,7 +63,7 @@ body{
   }
   &__seccion{
     font-size:2.5rem;
-    color:yellow;
+    color:map-get($colores,"terciario");
     text-align: center;
     padding-bottom: 5%;
     padding-top: 1%;
@@ -75,37 +73,36 @@ body{
 // main sección atrapa
 .loader{
   animation: rotate 1s linear infinite;
- }
+ } 
 .main-atrapa{
-  display: flex;
+  @include flex-container(row, space-between, center);
   &__container{
     width: 50%;
     margin-left: 10%;
     &-img{
      width:70%;
-    
-    }
+    } 
     .card {
       text-align: center;
       font-size: 0.8rem;
-      border-image: linear-gradient(45deg, #ccff00, #0f6);
+      border-image: gradiente(#ccff00, #0f6,to bottom);
       color: white;
       padding:5%;
       border-style: solid;
       border-width: 15px;
-      background-image: linear-gradient(to bottom right, #f11717, #000000);
+      background-image: gradiente(map-get($colores,"primario"),#000000,to bottom right);
       width:80%;
       margin-top: 3%;
       img{
         margin-left: 25%;
         width: 70% !important;
-
       }
       h1{
         font-size: 1.5rem;
         font-weight:bold;
         line-height: 2rem;
       }
+      
     }
     
   }
@@ -117,13 +114,93 @@ body{
 }
 
 
-.container {
-  display: flex;
+// coments 
+// Colores de Pokémon
+$color-1: #EE8130;
+$color-2: #F7D02C;
+$color-3: #7AC74C;
+$color-4: #96D9D6;
+$color-5: #C22E28;
+$color-6: #A98FF3;
 
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+// Estilos para el contenedor del chat
+.container-chat {
+  background-color: #fff;
+  border: 2px solid $color-1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  
+  &__textarea {
+    background-color: $color-1;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.6rem;
+    height: 300px;
+    padding: 10px;
+    resize: none;
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+    &-label {
+      color: $color-1;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    
+    &-input,
+    &-textarea {
+      border: 2px solid $color-1;
+      border-radius: 5px;
+      font-size: 1.6rem;
+      padding: 5px;
+    }
+    
+    &-submit {
+      background-color: $color-1;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.6rem;
+      margin-top: 10px;
+      padding: 5px 10px;
+      
+      &:hover {
+        background-color: $color-2;
+      }
+    }
+  }
+  
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+    &-edit {
+      background-color: $color-1;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.6rem;
+      padding: 5px 10px;
+      
+      &:hover {
+        background-color: $color-2;
+      }
+    }
+  }
 }
+//
 footer {
   position: absolute;
   bottom: 0;
@@ -135,15 +212,7 @@ footer {
   }
 }
 
-.banner {
-  background-image: url("../images/banner.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 300px; /* altura de su banner */
-  text-align: center;
-  color: white;
-  padding-top: 100px;
-}
+
 
 .imgWorld {
   width: 100%;
@@ -178,35 +247,5 @@ h1::first-letter {
   top: 0;
 }
 
-form {
-  border: 5px solid white;
-  margin-left: 35%;
+ 
 
-  label {
-    color: white;
-  }
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-}
-
-#usuario {
-  width: 35%;
-  margin-top: 5%;
-}
-#submit {
-  width: 25%;
-}
-#chat {
-  width: 50%;
-  height: 50%;
-  margin-left: 25%;
-  resize: none;
-  font-size: 1.5rem;
-}
-
-.container_chat {
-  height: 400px;
-  width: 100%;
-  margin-bottom: 5%;
-}

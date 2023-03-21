@@ -10,6 +10,7 @@ const enviar = (event) => {
 };
 
 const editar=()=>{
+  console.log("entro a editar")
     if(newComentario !== null){
         newComentario.editarComentario(document.getElementById("comentario").value)
     }else{
@@ -19,6 +20,8 @@ const editar=()=>{
 }
 
 const eliminar=()=>{
+  console.log("entro a eliminar")
+
     if(newComentario !== null){
         newComentario.borrarComentario()
         newComentario=null;

@@ -3,14 +3,13 @@ const cardContainer=document.getElementById("card-container")
 const numeroAleatorio = Math.floor(Math.random() * 1008) + 1;
 const boton = document.getElementById("boton_atrapa");
 const showCard = () => {
-  setInterval(() => {
-    boton.classList.remove("loader")
-  }, 2000)
 
   boton.classList.add("loader")
   
+  
   const fetchPokemonData = new Promise((resolve, reject) => {
     setTimeout(() => {
+      boton.classList.remove("loader")
       fetch(`https://pokeapi.co/api/v2/pokemon/${numeroAleatorio}/`)
         .then(response => response.json())
         .then(data => {
@@ -23,13 +22,14 @@ const showCard = () => {
   });
   
   fetchPokemonData.then(data => {
+    
     const div = document.createElement('div');
     div.setAttribute("class","card")
     const h1 = document.createElement('h1');
     h1.textContent = data.name;
     h1.style.fontSize="2.8rem"
     div.appendChild(h1);
-
+    boton.classList.remove("loader")
     const img= document.createElement('img')
     img.setAttribute('src',data.sprites.other['official-artwork'].front_default )
     img.style.width="40%"

@@ -21,13 +21,66 @@
     
 }
 
-@mixin boton_home(){
-	margin-top: 2%;
-	margin-bottom: 3%;
-	border-radius: 0.5rem;
-	width: 10%;
-	font-size: 1.3rem;
-	color:red;
-	background-color:rgb(49, 47, 47) ;
-	border:1px solid red;
+
+$red: #e3350d;
+$yellow: #ffd700;
+$black: #000;
+
+@mixin button($bg-color, $text-color, $hover-color) {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text-color;
+  background-color: $bg-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
 }
+
+@mixin nav-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  // Función para los estilos de los enlaces de navegación
+// Función para los estilos de los enlaces de navegación
+
+  // mixins para el flex
+
+  @mixin flex-container($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+  }
+
+
+
+  //mixin para medidas del carrousel 
+
+  @mixin carrousel-dimensiones($ancho, $altura) {
+	width: $ancho;
+	height: $altura;
+	margin-left: calc((100% - #{$ancho}) / 2);
+  
+	.carrousel__grande {
+	  width: calc(#{$ancho} * 3);
+	  height: $altura;
+	}
+  
+	.carrousel__img {
+	  width: calc(#{$ancho} / 3);
+	}
+  }
+  

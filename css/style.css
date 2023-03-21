@@ -1,26 +1,3 @@
-@charset "UTF-8";
-/* Aquí definimos las Custom properties */
-:root {
-  --negro: #393939;
-  --blanco: #ececec;
-  --sombra-ppal: #c9c9c9;
-  --sombra-sec: #ffffff;
-  --borde-negro: #00000050;
-  --marcado: rgb(127, 195, 255);
-  /* Tipografía */
-  --tipo-principal: Helvetica, Arial, sans-serif;
-}
-
-/* Las adaptamos al modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --negro: #ececec;
-    --blanco: #303030;
-    --sombra-ppal: #242424;
-    --sombra-sec: #3c3c3c;
-    --borde-negro: #FFFFFF50;
-  }
-}
 /*
     Estilos generales para que las etiquetas no contengan propiedades
     que nos estorben y en todos los navegadores se vean correctamente
@@ -107,18 +84,28 @@ body {
 
 body {
   font-family: cursive;
-  background-color: black;
+  background-color: #000000;
 }
 
-.home {
-  margin-top: 2%;
-  margin-bottom: 3%;
-  border-radius: 0.5rem;
-  width: 10%;
-  font-size: 1.3rem;
-  color: red;
-  background-color: rgb(49, 47, 47);
-  border: 1px solid red;
+.button--inicio {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f5df17;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.button--inicio:hover {
+  background-color: #cc0000;
 }
 
 .header__banner {
@@ -128,7 +115,7 @@ body {
   background-position: center;
 }
 .header__nav {
-  background-color: rgb(233, 14, 14);
+  background-color: #ff0000;
   padding: 1%;
   margin-bottom: 3%;
 }
@@ -138,32 +125,36 @@ body {
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .nav__ul-li {
-  color: white;
+  color: #ffffff;
   font-size: 1.8rem;
 }
 .nav__ul-a:hover {
-  color: black;
+  color: #000000;
 }
 
 .carrousel {
   overflow: hidden;
-  width: 80%;
-  height: 500px;
-  margin-left: 10%;
+  width: 100%;
+  height: 600px;
+  margin-left: calc((100% - 100%) / 2);
+}
+.carrousel .carrousel__grande {
+  width: calc(100% * 3);
+  height: 600px;
+}
+.carrousel .carrousel__img {
+  width: calc(100% / 3);
 }
 .carrousel__grande {
-  width: 300%;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-}
-.carrousel__img {
-  width: 33.3333333333%;
-  height: auto;
 }
 .carrousel__img img {
   width: 20%;
@@ -174,7 +165,7 @@ body {
 }
 .carrousel__seccion {
   font-size: 2.5rem;
-  color: yellow;
+  color: #f5df17;
   text-align: center;
   padding-bottom: 5%;
   padding-top: 1%;
@@ -186,6 +177,9 @@ body {
 
 .main-atrapa {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .main-atrapa__container {
   width: 50%;
@@ -197,12 +191,12 @@ body {
 .main-atrapa__container .card {
   text-align: center;
   font-size: 0.8rem;
-  border-image: linear-gradient(45deg, #ccff00, #0f6);
+  border-image: linear-gradient(to bottom, #ccff00, #0f6);
   color: white;
   padding: 5%;
   border-style: solid;
   border-width: 15px;
-  background-image: linear-gradient(to bottom right, #f11717, #000000);
+  background-image: linear-gradient(to bottom right, #ff0000, #000000);
   width: 80%;
   margin-top: 3%;
 }
@@ -221,11 +215,71 @@ body {
     transform: rotate(360deg);
   }
 }
-.container {
+.container-chat {
+  background-color: #fff;
+  border: 2px solid #EE8130;
+  border-radius: 10px;
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+.container-chat__textarea {
+  background-color: #EE8130;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.6rem;
+  height: 300px;
+  padding: 10px;
+  resize: none;
+}
+.container-chat__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.container-chat__form-label {
+  color: #EE8130;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.container-chat__form-input, .container-chat__form-textarea {
+  border: 2px solid #EE8130;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  padding: 5px;
+}
+.container-chat__form-submit {
+  background-color: #EE8130;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+.container-chat__form-submit:hover {
+  background-color: #F7D02C;
+}
+.container-chat__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.container-chat__buttons-edit {
+  background-color: #EE8130;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 5px 10px;
+}
+.container-chat__buttons-edit:hover {
+  background-color: #F7D02C;
 }
 
 footer {
@@ -237,16 +291,6 @@ footer p {
   font-size: 1.2rem;
   text-align: center;
   color: yellow;
-}
-
-.banner {
-  background-image: url("../images/banner.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 300px; /* altura de su banner */
-  text-align: center;
-  color: white;
-  padding-top: 100px;
 }
 
 .imgWorld {
@@ -280,40 +324,6 @@ h1::first-letter {
   bottom: 0;
   width: 100%;
   top: 0;
-}
-
-form {
-  border: 5px solid white;
-  margin-left: 35%;
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-}
-form label {
-  color: white;
-}
-
-#usuario {
-  width: 35%;
-  margin-top: 5%;
-}
-
-#submit {
-  width: 25%;
-}
-
-#chat {
-  width: 50%;
-  height: 50%;
-  margin-left: 25%;
-  resize: none;
-  font-size: 1.5rem;
-}
-
-.container_chat {
-  height: 400px;
-  width: 100%;
-  margin-bottom: 5%;
 }
 
 /*# sourceMappingURL=style.css.map */

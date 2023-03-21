@@ -1,0 +1,3 @@
+@function gradiente($color1, $color2, $direccion: to bottom) {
+    @return linear-gradient($direccion, $color1, $color2);
+  }
