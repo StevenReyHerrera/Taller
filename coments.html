@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+
+    <div class="container_chat">
+      <textarea id="chat"></textarea>
+    </div>
+
+    <form onsubmit="enviar(event)">
+      <label>Usuario</label>
+      <input type="text" id="usuario">
+      <p><label for="w3review">Comentarios:</label></p>
+      <textarea id="comentario"></textarea>
+      <br>
+      <input type="submit" value="Submit" id="submit">
+      
+    </form>
+    <button onclick="editar()">editar</button>
+    <button onclick="eliminar()">Eliminar</button>
+    <p>Click the "Submit" button and the form-data will be sent to a page on the 
+      server called "action_page.php".</p>
+      
+    <script src="./js/coments.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+@mixin neo( $estado ,$br , $dis1 ,$back-color:default){
+	color			: var(--negro);
+	transition		: all .4s ease;
+	border-radius 	: $br ;
+	
+	@if $estado == 1 {
+		background-color	: $back-color;
+		box-shadow			: 
+			$dis1    $dis1    $dis1*2 var(--sombra-ppal),
+			$dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec),
+			inset 0 0 0 transparent,
+			inset 0 0 0 transparent;
+	}@else if $estado == 2 {
+		background-color	: $back-color;
+		box-shadow			: 
+			0 0 0 transparent,
+			0 0 0 transparent,
+			inset $dis1    $dis1    $dis1*2 var(--sombra-ppal),
+			inset $dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec);
+	}
+    
+}
+
+@mixin boton_home(){
+	margin-top: 2%;
+	margin-bottom: 3%;
+	border-radius: 0.5rem;
+	width: 10%;
+	font-size: 1.3rem;
+	color:red;
+	background-color:rgb(49, 47, 47) ;
+	border:1px solid red;
+}

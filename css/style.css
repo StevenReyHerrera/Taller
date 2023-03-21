@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #FFFFFF50;
+  }
+}
+/*
+    Estilos generales para que las etiquetas no contengan propiedades
+    que nos estorben y en todos los navegadores se vean correctamente
+*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+video {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  hyphens: auto;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+}
+
+body {
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: var(--blanco);
+  color: var(--negro);
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: cursive;
+  background-color: black;
+}
+
+.home {
+  margin-top: 2%;
+  margin-bottom: 3%;
+  border-radius: 0.5rem;
+  width: 10%;
+  font-size: 1.3rem;
+  color: red;
+  background-color: rgb(49, 47, 47);
+  border: 1px solid red;
+}
+
+.header__banner {
+  height: 200px;
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header__nav {
+  background-color: rgb(233, 14, 14);
+  padding: 1%;
+  margin-bottom: 3%;
+}
+
+.nav__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+.nav__ul-li {
+  color: white;
+  font-size: 1.8rem;
+}
+.nav__ul-a:hover {
+  color: black;
+}
+
+.carrousel {
+  overflow: hidden;
+  width: 80%;
+  height: 500px;
+  margin-left: 10%;
+}
+.carrousel__grande {
+  width: 300%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.carrousel__img {
+  width: 33.3333333333%;
+  height: auto;
+}
+.carrousel__img img {
+  width: 20%;
+  margin-left: 40%;
+}
+.carrousel__img img:hover {
+  transform: scale(1.2);
+}
+.carrousel__seccion {
+  font-size: 2.5rem;
+  color: yellow;
+  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 1%;
+}
+
+.loader {
+  animation: rotate 1s linear infinite;
+}
+
+.main-atrapa {
+  display: flex;
+}
+.main-atrapa__container {
+  width: 50%;
+  margin-left: 10%;
+}
+.main-atrapa__container-img {
+  width: 70%;
+}
+.main-atrapa__container .card {
+  text-align: center;
+  font-size: 0.8rem;
+  border-image: linear-gradient(45deg, #ccff00, #0f6);
+  color: white;
+  padding: 5%;
+  border-style: solid;
+  border-width: 15px;
+  background-image: linear-gradient(to bottom right, #f11717, #000000);
+  width: 80%;
+  margin-top: 3%;
+}
+.main-atrapa__container .card img {
+  margin-left: 25%;
+  width: 70% !important;
+}
+.main-atrapa__container .card h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  font-size: 1.2rem;
+  text-align: center;
+  color: yellow;
+}
+
+.banner {
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 300px; /* altura de su banner */
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+}
+
+.imgWorld {
+  width: 100%;
+  height: 200px;
+}
+
+h1::first-letter {
+  text-transform: uppercase;
+}
+
+.div_title {
+  background-image: url("../images/Title_stat1.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 50%;
+  height: 200px;
+  color: white;
+}
+
+#chart_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_amount {
+  background-image: url("../images/stats_world.png");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  top: 0;
+}
+
+form {
+  border: 5px solid white;
+  margin-left: 35%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+form label {
+  color: white;
+}
+
+#usuario {
+  width: 35%;
+  margin-top: 5%;
+}
+
+#submit {
+  width: 25%;
+}
+
+#chat {
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  resize: none;
+  font-size: 1.5rem;
+}
+
+.container_chat {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+/*# sourceMappingURL=style.css.map */
