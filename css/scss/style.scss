@@ -111,76 +111,6 @@ body {
     transform: rotate(360deg);
   }
 }
-.water {
-  background-image: gradiente(
-    back_tipo("water"),
-    #000000,
-    to bottom right
-  );
-}
-.flying{
-  background-image: gradiente(
-    back_tipo("flying"),
-    #000000,
-    to bottom right
-  );
-}
-.normal {
-  background-image: gradiente(
-    back_tipo("normal"),
-    #000000,
-    to bottom right
-  );
-}
-.poison{
-  background-image: gradiente(
-    back_tipo("poison"),
-    #000000,
-    to bottom right
-  );
-}
-.steel {
-  background-image: gradiente(
-    back_tipo("steel"),
-    #000000,
-    to bottom right
-  );
-}
-.dragon{
-  background-image: gradiente(
-    back_tipo("dragon"),
-    #000000,
-    to bottom right
-  );
-}
-.fire {
-  background-image: gradiente(
-    back_tipo("fire"),
-    #000000,
-    to bottom right
-  );
-}
-.grass {
-  background-image: gradiente(
-    back_tipo("grass"),
-    #000000,
-    to bottom right
-  );
-}
-.psychic{
-  background-image: gradiente(
-    back_tipo("psychic"),
-    #000000,
-    to bottom right
-  );
-}
-.psychic{
-  background-image: gradiente(
-    back_tipo("rock"),
-    #000000,
-    to bottom right
-  );
-}
 
 
 // Estilos para el contenedor del chat
@@ -212,7 +142,7 @@ body {
 
     &-label {
       color: map-get($colores, "texto");
-      font-size: font-size(large);
+      font-size: font-size(medium);
       margin-bottom: 10px;
     }
 

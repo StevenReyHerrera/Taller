@@ -214,46 +214,6 @@ body {
     transform: rotate(360deg);
   }
 }
-.water {
-  background-image: linear-gradient(to bottom right, #0074d9, #000000);
-}
-
-.flying {
-  background-image: linear-gradient(to bottom right, #99c6ee, #000000);
-}
-
-.normal {
-  background-image: linear-gradient(to bottom right, #e7e541, #000000);
-}
-
-.poison {
-  background-image: linear-gradient(to bottom right, #c7f10e, #000000);
-}
-
-.steel {
-  background-image: linear-gradient(to bottom right, #a1a197, #000000);
-}
-
-.dragon {
-  background-image: linear-gradient(to bottom right, #f1430e, #000000);
-}
-
-.fire {
-  background-image: linear-gradient(to bottom right, #fa0c00, #000000);
-}
-
-.grass {
-  background-image: linear-gradient(to bottom right, #2ecc40, #000000);
-}
-
-.psychic {
-  background-image: linear-gradient(to bottom right, #9c00d9, #000000);
-}
-
-.psychic {
-  background-image: linear-gradient(to bottom right, #553007, #000000);
-}
-
 .container-chat {
   background-color: #ff0000;
   border: 2px solid #ffffff;
@@ -281,7 +241,7 @@ body {
 }
 .container-chat__form-label {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 .container-chat__form-input, .container-chat__form-textarea {

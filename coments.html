@@ -10,11 +10,18 @@
     <div class="container-chat">
       <textarea class="container-chat__textarea" id="chat"></textarea> 
       <form class="container-chat__form" onsubmit="enviar(event)">
-        <label class="container-chat__form-label">Usuario</label>
+        <label class="container-chat__form-label">Usuario</label><p id="required-usuario"></p>
         <input class="container-chat__form-input" type="text" id="usuario">
-        <label class="container-chat__form-label" for="w3review">Comentario:</label>
-        <textarea type="text" class="container-chat__form-textarea" id="comentario"></textarea> 
-        <input class="container-chat__form-submit" type="submit" value="Submit" id="submit"> 
+        
+        <label class="container-chat__form-label" for="comentario">Comentario:</label>
+        <textarea type="text" class="container-chat__form-textarea" id="comentario" ></textarea> <p id="required-coment"></p>
+        <label class="container-chat__form-label" for="correo">Correo:</label> <p id="required-correo"></p>
+        <input class="container-chat__form-input" type="text" id="correo">
+        <label class="container-chat__form-label" for="correo">telefono:</label> <p id="required-tel"></p>
+        <input class="container-chat__form-input" type="number" id="telefono"> 
+
+        <input class="container-chat__form-submit" type="submit" value="Submit" id="submit">
+       
       </form>
       <div class="container-chat__buttons"> 
         <button class="container-chat__buttons-edit" onclick="editar()">Editar</button>
