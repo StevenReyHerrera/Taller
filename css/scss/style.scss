@@ -77,33 +77,64 @@ body {
   &__container {
     width: 50%;
     margin-left: 10%;
+     p{
+      color:white;
+      font-size: font-size(medium);
+     }
     &-img {
       width: 70%;
     }
     .card {
       text-align: center;
-      font-size: font-size(small);
-      border-image: gradiente(#ccff00, #0f6, to bottom);
       color: white;
       padding: 5%;
-      border-style: solid;
-      border-width: 15px;
-
       width: 80%;
       margin-top: 3%;
+      border: 10px solid yellow;
+    
      
       img {
         margin-left: 25%;
         width: 70% !important;
       }
       h1 {
-        font-size: font-size(large);
+        font-size: font-size(medium);
         font-weight: bold;
         line-height: 2rem;
       }
     }
   }
 }
+.steel{
+  background-image: gradiente(back_tipo("steel"),rgb(0, 0, 0),to bottom);
+}
+.grass{
+  background-image: gradiente(back_tipo("grass"),rgb(0, 0, 0),to bottom);
+}
+.electric{
+  background-image: gradiente(back_tipo("electric"),rgb(0, 0, 0),to bottom);
+}
+.dark{
+  background-image: gradiente(back_tipo("dark"),rgb(0, 0, 0),to bottom);
+}
+.normal{
+  background-image: gradiente(back_tipo("normal"),rgb(0, 0, 0),to bottom);
+}
+.poison{
+  background-image: gradiente(back_tipo("poison"),rgb(0, 0, 0),to bottom);
+}
+.water{
+  background-image:  gradiente(back_tipo("water"),rgb(0, 0, 0),to bottom);
+
+}
+
+.flying{
+  background-image:  gradiente(back_tipo("flying"),rgb(0, 0, 0),to bottom);
+
+}
+
+
+
 
 
 @keyframes rotate {
@@ -125,10 +156,10 @@ body {
   padding: 20px;
 
   &__textarea {
-    background-color:map-get($colores, "terciario");;
+    background-color:map-get($colores, "secundario");;
     border: none;
     border-radius: 5px;
-    color: map-get($colores, "texto");
+    color: map-get($colores, "primario");
     font-size: font-size(large);
     height: 300px;
     padding: 10px;
@@ -148,24 +179,26 @@ body {
 
     &-input,
     &-textarea {
-      border: 2px solid map-get($colores, "secundario");;
+      border: 2px solid map-get($colores, "secundario");
       border-radius: 5px;
       font-size: font-size(medium);
       padding: 5px;
+      background-color: map-get($colores, "secundario");
     }
 
     &-submit {
-      background-color: map-get($colores, "terciario");
+      background-color: map-get($colores, "primario");
       border: none;
       border-radius: 5px;
-      color: map-get($colores, "texto");
+      color: map-get($colores, "secundario");
       cursor: pointer;
       font-size: 1.6rem;
       margin-top: 10px;
       padding: 5px 10px;
 
       &:hover {
-        background-color: map-get($colores, "terciario");;
+        background-color: map-get($colores, "texto");
+        color:map-get($colores, "primario");
       }
     }
   }
@@ -185,7 +218,8 @@ body {
       padding: 5px 10px;
 
       &:hover {
-        background-color: map-get($colores, "terciario");;
+        background-color: map-get($colores, "secundario");
+        color:map-get($colores, "primario")
       }
     }
   }

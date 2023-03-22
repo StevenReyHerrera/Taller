@@ -30,7 +30,9 @@
 		@return #fa0c00;
 	  } @else if $type == "water" {
 		@return #0074d9;
-	  } @else if $type == "flying" {
+	  } @else if $type == "electric" {
+		@return #ccd2d8;
+	  }@else if $type == "flying" {
 		@return #99c6ee;
 	  }@else if $type == "rock" {
 		@return #553007;

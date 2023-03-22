@@ -185,28 +185,61 @@ body {
   width: 50%;
   margin-left: 10%;
 }
+.main-atrapa__container p {
+  color: white;
+  font-size: 1.1rem;
+}
 .main-atrapa__container-img {
   width: 70%;
 }
 .main-atrapa__container .card {
   text-align: center;
-  font-size: 0.5rem;
-  border-image: linear-gradient(to bottom, #ccff00, #0f6);
   color: white;
   padding: 5%;
-  border-style: solid;
-  border-width: 15px;
   width: 80%;
   margin-top: 3%;
+  border: 10px solid yellow;
 }
 .main-atrapa__container .card img {
   margin-left: 25%;
   width: 70% !important;
 }
 .main-atrapa__container .card h1 {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   line-height: 2rem;
+}
+
+.steel {
+  background-image: linear-gradient(to bottom, #a1a197, rgb(0, 0, 0));
+}
+
+.grass {
+  background-image: linear-gradient(to bottom, #2ecc40, rgb(0, 0, 0));
+}
+
+.electric {
+  background-image: linear-gradient(to bottom, #ccd2d8, rgb(0, 0, 0));
+}
+
+.dark {
+  background-image: linear-gradient(to bottom, #ddd, rgb(0, 0, 0));
+}
+
+.normal {
+  background-image: linear-gradient(to bottom, #e7e541, rgb(0, 0, 0));
+}
+
+.poison {
+  background-image: linear-gradient(to bottom, #c7f10e, rgb(0, 0, 0));
+}
+
+.water {
+  background-image: linear-gradient(to bottom, #0074d9, rgb(0, 0, 0));
+}
+
+.flying {
+  background-image: linear-gradient(to bottom, #99c6ee, rgb(0, 0, 0));
 }
 
 @keyframes rotate {
@@ -225,10 +258,10 @@ body {
   padding: 20px;
 }
 .container-chat__textarea {
-  background-color: #f5df17;
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  color: #ffffff;
+  color: #ff0000;
   font-size: 2rem;
   height: 300px;
   padding: 10px;
@@ -249,9 +282,10 @@ body {
   border-radius: 5px;
   font-size: 1.1rem;
   padding: 5px;
+  background-color: #ffffff;
 }
 .container-chat__form-submit {
-  background-color: #f5df17;
+  background-color: #ff0000;
   border: none;
   border-radius: 5px;
   color: #ffffff;
@@ -261,7 +295,8 @@ body {
   padding: 5px 10px;
 }
 .container-chat__form-submit:hover {
-  background-color: #f5df17;
+  background-color: #ffffff;
+  color: #ff0000;
 }
 .container-chat__buttons {
   display: flex;
@@ -278,7 +313,8 @@ body {
   padding: 5px 10px;
 }
 .container-chat__buttons-edit:hover {
-  background-color: #f5df17;
+  background-color: #ffffff;
+  color: #ff0000;
 }
 
 footer {

@@ -28,9 +28,10 @@ const showCard = () => {
   });
   
   fetchPokemonData.then(data => {
-    console.log(data)
+    console.log(data.types[0].type.name)
     const div = document.createElement('div');
     div.setAttribute("class","card")
+    div.classList.add(data.types[0].type.name)
     const h1 = document.createElement('h1');
     h1.textContent = data.name;
     h1.style.fontSize="2.8rem"
